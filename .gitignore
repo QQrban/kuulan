@@ -1,0 +1,89 @@
+# -----------------------------
+# Node / Nest / Next monorepo
+# -----------------------------
+node_modules/
+.pnpm-store/
+.pnp/
+.pnp.js
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Build outputs
+dist/
+build/
+out/
+.next/
+.next-cache/
+coverage/
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Env files (secrets)
+.env
+backend/.env
+.env.*
+!.env.example
+
+# Runtime / caches
+.cache/
+tmp/
+temp/
+*.tmp
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# -----------------------------
+# Nest specific
+# -----------------------------
+# (dist already ignored)
+# If using Nest CLI cache
+.nest/
+
+# -----------------------------
+# Next specific
+# -----------------------------
+# (already covered: .next, out)
+.vercel/
+
+# -----------------------------
+# Testing
+# -----------------------------
+.jest/
+playwright-report/
+test-results/
+cypress/videos/
+cypress/screenshots/
+
+# -----------------------------
+# IDE / OS
+# -----------------------------
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.iml
+
+# -----------------------------
+# Prisma
+# -----------------------------
+prisma/.env
+prisma/migrations/**/.env
+
+# -----------------------------
+# Docker
+# -----------------------------
+*.pid
+docker-data/
