@@ -3,7 +3,8 @@
     "PASSWORD_WEAK": "Your password must be at least 8 characters long and include at least one letter, one number, and one symbol(!@#$%^&*)",
     "EMAIL_EXISTS": "User with this email already exists",
     "USERNAME_EXISTS": "This username is already taken",
-    "INVALID_EMAIL": "Please enter a valid email address"
+    "INVALID_EMAIL": "Please enter a valid email address",
+    "USERNAME_INVALID": "Username can only contain letters and numbers"
   },
   "login": {
     "INVALID_CREDENTIALS": "Invalid email or password",

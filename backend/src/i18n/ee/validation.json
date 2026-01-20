@@ -3,7 +3,8 @@
     "PASSWORD_WEAK": "Parool peab olema vähemalt 8 tähemärki pikk ja sisaldama vähemalt ühte tähte, ühte numbrit ning ühte sümbolit (!@#$%^&*)",
     "EMAIL_EXISTS": "Selle e-posti aadressiga kasutaja on juba olemas",
     "USERNAME_EXISTS": "See kasutajanimi on juba kasutusel",
-    "INVALID_EMAIL": "Palun sisesta kehtiv e-posti aadress"
+    "INVALID_EMAIL": "Palun sisesta kehtiv e-posti aadress",
+    "USERNAME_INVALID": "Kasutajanimi võib sisaldada ainult tähti ja numbreid."
   },
   "login": {
     "INVALID_CREDENTIALS": "Vale e-posti aadress või parool",

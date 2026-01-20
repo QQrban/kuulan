@@ -4,6 +4,7 @@ import { UsersModule } from './users/users.module';
 import { ConfigModule } from '@nestjs/config';
 import { User } from './users/users.model';
 import { AcceptLanguageResolver, I18nModule } from 'nestjs-i18n';
+import { AuthModule } from './auth/auth.module';
 import * as path from 'path';
 
 @Module({
@@ -32,6 +33,7 @@ import * as path from 'path';
       autoLoadModels: true,
     }),
     UsersModule,
+    AuthModule,
   ],
 })
 export class AppModule {}

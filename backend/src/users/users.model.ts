@@ -1,10 +1,6 @@
 import { Column, DataType, Model, Table } from 'sequelize-typescript';
-
-enum Role {
-  FREE = 'FREE',
-  PREMIUM = 'PREMIUM',
-  ADMIN = 'ADMIN',
-}
+import { ApiProperty } from '@nestjs/swagger';
+import { Role } from '../common/enums/role.enum';
 
 interface UserCreationAttrs {
   email: string;
@@ -14,6 +10,7 @@ interface UserCreationAttrs {
 
 @Table({ tableName: 'users' })
 export class User extends Model<User, UserCreationAttrs> {
+  @ApiProperty({ example: '1', description: 'User unique identifier' })
   @Column({
     type: DataType.UUID,
     defaultValue: DataType.UUIDV4,
@@ -21,6 +18,7 @@ export class User extends Model<User, UserCreationAttrs> {
   })
   declare id: string;
 
+  @ApiProperty({ example: 'user@gmail.com', description: 'User email address' })
   @Column({
     type: DataType.STRING,
     unique: true,
@@ -28,12 +26,17 @@ export class User extends Model<User, UserCreationAttrs> {
   })
   declare email: string;
 
+  @ApiProperty({
+    example: 'test12345!',
+    description: 'Password (min 8 len, min 1 letter, min 1 symbol)',
+  })
   @Column({
     type: DataType.STRING,
     allowNull: false,
   })
   declare password: string;
 
+  @ApiProperty({ example: 'user123', description: 'Username (min 4 len)' })
   @Column({
     type: DataType.STRING,
     unique: true,
@@ -41,18 +44,21 @@ export class User extends Model<User, UserCreationAttrs> {
   })
   declare username: string;
 
+  @ApiProperty({ example: 'PREMIUM', description: "User's role" })
   @Column({
     type: DataType.ENUM(...Object.values(Role)),
     defaultValue: Role.FREE,
   })
   declare role: Role;
 
+  @ApiProperty({ example: 'TRUE', description: 'Is user verified' })
   @Column({
     type: DataType.BOOLEAN,
     defaultValue: false,
   })
   declare isVerified: boolean;
 
+  @ApiProperty({ example: 'Mon 12:25', description: "User's last login date" })
   @Column({
     type: DataType.DATE,
     allowNull: true,
