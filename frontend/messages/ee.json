@@ -1,0 +1,15 @@
+{
+  "hero": {
+    "title": "Õpime rõõmuga!",
+    "subtitle": "Lõbusad mängud ja tegevused, mis aitavad arendada sinu lapse mõtlemist, loovust ja uusi teadmisi."
+  },
+  "header": {
+    "nav": {
+      "games": "Mängud",
+      "about": "Meist",
+      "parents": "Vanematele",
+      "contacts": "Kontaktid"
+    },
+    "login": "Logi sisse"
+  }
+}

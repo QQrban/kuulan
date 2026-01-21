@@ -1,0 +1,15 @@
+{
+  "hero": {
+    "title": "Learn with joy!",
+    "subtitle": "Fun games and activities that help develop your child's thinking, creativity, and new knowledge."
+  },
+  "header": {
+    "nav": {
+      "games": "Games",
+      "about": "About us",
+      "parents": "For parents",
+      "contacts": "Contacts"
+    },
+    "login": "Sign in"
+  }
+}
