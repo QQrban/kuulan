@@ -1,8 +1,7 @@
 import React, { SetStateAction } from 'react';
-import Button from '../Button';
 import { useTranslations } from 'next-intl';
-import { FaArrowRight } from 'react-icons/fa';
-import { RxCross2 } from 'react-icons/rx';
+import { ArrowRight, X } from 'lucide-react';
+import { ButtonWrapper } from '@/components/ui/ButtonWrapper';
 
 interface Props {
   isOpen: boolean;
@@ -39,7 +38,7 @@ export default function MobileMenu({ isOpen, setIsOpen }: Props) {
             aria-label="Close menu"
             onClick={() => setIsOpen(false)}
           >
-            <RxCross2 size={40} className="text-(--brand-1)" />
+            <X strokeWidth={3} size={40} className="text-(--brand-1)" />
           </button>
         </div>
 
@@ -59,7 +58,7 @@ export default function MobileMenu({ isOpen, setIsOpen }: Props) {
         </nav>
 
         <div className="mt-8">
-          <Button label={t('login')} icon={<FaArrowRight />} />
+          <ButtonWrapper icon={<ArrowRight />}>{t('login')}</ButtonWrapper>
         </div>
       </aside>
     </div>

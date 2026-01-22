@@ -1,8 +1,4 @@
 {
-  "hero": {
-    "title": "Learn with joy!",
-    "subtitle": "Fun games and activities that help develop your child's thinking, creativity, and new knowledge."
-  },
   "header": {
     "nav": {
       "games": "Games",
@@ -11,5 +7,66 @@
       "contacts": "Contacts"
     },
     "login": "Sign in"
+  },
+  "main_page": {
+    "hero": {
+      "title": "Learning is <yellow>fun</yellow> and <yellow>joyful</yellow>!",
+      "subtitle": "Fun games and activities that help develop your child's thinking, creativity, and new knowledge.",
+      "start": "Start playing",
+      "more": "Learn more",
+      "badge": "For kids aged 2–7"
+    },
+    "skills": {
+      "title": "<purple>What we</purple> <green>develop?</green>",
+      "subtitle": "Our games help children aged 2–7 develop key skills through play, exploration, and creativity.",
+      "cards": {
+        "logic": {
+          "title": "Logic development",
+          "description": "Puzzles and challenges to train thinking and problem-solving."
+        },
+        "emotional": {
+          "title": "Emotional intelligence",
+          "description": "Games for recognizing emotions and developing social skills."
+        },
+        "creativity": {
+          "title": "Creativity",
+          "description": "Coloring, drawing, and creative activities."
+        },
+        "music": {
+          "title": "Music and sounds",
+          "description": "Musical games and learning about instruments and sounds."
+        }
+      }
+    },
+    "categories": {
+      "title": "<blue>Game</blue> <purple>categories</purple>",
+      "subtitle": "Over 50 engaging games across different learning categories.",
+      "cards": {
+        "letters": {
+          "title": "Letters and reading",
+          "description": "Alphabet, syllables, first words",
+          "count": "{count} games",
+          "cta": "Play"
+        },
+        "numbers": {
+          "title": "Numbers and counting",
+          "description": "Numbers from 1 to 10, simple math",
+          "count": "{count} games",
+          "cta": "Play"
+        },
+        "shapes": {
+          "title": "Shapes and colors",
+          "description": "Geometric shapes and shades",
+          "count": "{count} games",
+          "cta": "Play"
+        },
+        "world": {
+          "title": "The world around us",
+          "description": "Animals, nature, professions",
+          "count": "{count} games",
+          "cta": "Play"
+        }
+      }
+    }
   }
 }

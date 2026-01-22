@@ -1,8 +1,4 @@
 {
-  "hero": {
-    "title": "Õpime rõõmuga!",
-    "subtitle": "Lõbusad mängud ja tegevused, mis aitavad arendada sinu lapse mõtlemist, loovust ja uusi teadmisi."
-  },
   "header": {
     "nav": {
       "games": "Mängud",
@@ -11,5 +7,66 @@
       "contacts": "Kontaktid"
     },
     "login": "Logi sisse"
+  },
+  "main_page": {
+    "hero": {
+      "title": "Õpime <yellow>rõõmuga</yellow> ja <yellow>mängides</yellow>!",
+      "subtitle": "Lõbusad mängud ja tegevused, mis aitavad arendada sinu lapse mõtlemist, loovust ja uusi teadmisi.",
+      "start": "Alusta mängimist",
+      "more": "Uuri lähemalt",
+      "badge": "Lastele vanuses 2–7 aastat"
+    },
+    "skills": {
+      "title": "<purple>Mida me</purple> <green>arendame?</green>",
+      "subtitle": "Meie mängud aitavad 2–7-aastastel lastel arendada olulisi oskusi mängu, avastamise ja loovuse kaudu.",
+      "cards": {
+        "logic": {
+          "title": "Loogika arendamine",
+          "description": "Mõistatused ja ülesanded mõtlemise ning probleemide lahendamise treenimiseks."
+        },
+        "emotional": {
+          "title": "Emotsionaalne intelligentsus",
+          "description": "Mängud emotsioonide äratundmiseks ja sotsiaalsete oskuste arendamiseks."
+        },
+        "creativity": {
+          "title": "Loovus",
+          "description": "Värvimine, joonistamine ja loovad tegevused."
+        },
+        "music": {
+          "title": "Muusika ja helid",
+          "description": "Muusikamängud ja pillide ning helide õppimine."
+        }
+      }
+    },
+    "categories": {
+      "title": "<blue>Mängude</blue> <purple>kategooriad</purple>",
+      "subtitle": "Üle 50 põneva mängu erinevates õpikategooriates.",
+      "cards": {
+        "letters": {
+          "title": "Tähed ja lugemine",
+          "description": "Tähestik, silbid, esimesed sõnad",
+          "count": "{count} mängu",
+          "cta": "Mängi"
+        },
+        "numbers": {
+          "title": "Numbrid ja loendamine",
+          "description": "Numbrid 1–10, lihtne matemaatika",
+          "count": "{count} mängu",
+          "cta": "Mängi"
+        },
+        "shapes": {
+          "title": "Kujud ja värvid",
+          "description": "Geomeetrilised kujundid ja toonid",
+          "count": "{count} mängu",
+          "cta": "Mängi"
+        },
+        "world": {
+          "title": "Ümbritsev maailm",
+          "description": "Loomad, loodus, ametid",
+          "count": "{count} mängu",
+          "cta": "Mängi"
+        }
+      }
+    }
   }
 }
