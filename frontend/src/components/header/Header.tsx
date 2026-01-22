@@ -1,14 +1,12 @@
 'use client';
 
-import Image from 'next/image';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import logo from '../../../public/kuulan.svg';
 import MobileMenu from '@/components/header/MobileMenu';
 import { ArrowRight, Menu } from 'lucide-react';
 import { LanguageSwitcher } from '@/components/header/LanguageSwitcher';
-import Link from 'next/link';
 import { ButtonWrapper } from '@/components/ui/ButtonWrapper';
+import Logo from '@/components/shared/Logo';
 
 export default function Header() {
   const t = useTranslations('header');
@@ -16,18 +14,9 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full bg-(--header-bg) shadow-[0_6px_20px_rgba(48,35,73,0.12)]">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <Link href="/">
-            <div className="flex items-center gap-4">
-              <div className="w-15">
-                <Image src={logo} alt="logo" />
-              </div>
-              <span className="text-3xl font-semibold tracking-tight text-(--brand-1)">
-                Kuulan
-              </span>
-            </div>
-          </Link>
+      <header className="sticky top-0 z-50 w-full bg-(--header-bg) shadow-md">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-3 py-4">
+          <Logo />
 
           <nav className="hidden items-center gap-7 lg:gap-10 text-base font-medium text-(--text-muted) md:flex">
             <a className="transition-colors hover:text-(--text-main)" href="#">

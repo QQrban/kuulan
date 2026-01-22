@@ -67,6 +67,37 @@
           "cta": "Play"
         }
       }
+    },
+    "benefits": {
+      "title": "<purple>Safe</purple> <muted>and</muted> <pink>engaging</pink>",
+      "items": {
+        "games": "A lot of free educational games",
+        "age": "Adapted to your child's age",
+        "voice": "Voice guidance and support",
+        "progress": "Learning progress tracking",
+        "updates": "Regular updates with new games"
+      }
+    },
+    "bottom_cta": {
+      "title": "Start your adventure in the world of knowledge!",
+      "subtitle": "Discover a convenient and modern learning platform that helps you learn, grow, and explore new opportunities",
+      "button": "Join us"
+    },
+    "footer": {
+      "slogan_main": "Created with love for our youngest learners",
+      "description": "An interactive platform for learning and development of children aged 2–7 through play and creativity",
+      "categories": "Categories",
+      "parents": {
+        "title": "For parents",
+        "about_platform": "About the Platform",
+        "learning_method": "Learning Methodology",
+        "faq": "Frequently Asked Questions",
+        "privacy_policy": "Privacy Policy"
+      },
+      "contact_us": "Contact us",
+      "rights_reserved": "All rights reserved",
+      "made_with": "Made with",
+      "for_kids": "for kids"
     }
   }
 }

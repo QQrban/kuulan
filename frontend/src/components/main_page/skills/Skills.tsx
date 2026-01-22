@@ -17,7 +17,7 @@ export default function Skills() {
       <p className="mt-5 text-lg max-w-2xl text-(--text-muted) tracking-wide">
         {t('subtitle')}
       </p>
-      <section className="mx-auto max-w-6xl px-6 mt-12">
+      <section className="mx-auto max-w-6xl px-3 mt-12">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <SkillCard
             accentColor="var(--brand-1)"

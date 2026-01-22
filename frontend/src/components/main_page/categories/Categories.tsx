@@ -7,7 +7,7 @@ export default function Categories() {
 
   return (
     <section className="py-14">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-center px-6 text-center">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-center px-3 text-center">
         <h2 className="text-5xl tracking-wide">
           {t.rich('title', {
             blue: (chunks) => <span className="text-blue-500">{chunks}</span>,

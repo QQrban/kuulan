@@ -67,6 +67,37 @@
           "cta": "Mängi"
         }
       }
+    },
+    "benefits": {
+      "title": "<purple>Turvaline</purple> <muted>ja</muted> <pink>huvitav</pink>",
+      "items": {
+        "games": "Palju tasuta arendavaid mänge",
+        "age": "Kohandatud lapse vanusele",
+        "voice": "Hääljuhised ja tugi",
+        "progress": "Õppe edenemise jälgimine",
+        "updates": "Regulaarsed uuendused uute mängudega"
+      }
+    },
+    "bottom_cta": {
+      "title": "Alusta oma seiklust teadmiste maailmas!",
+      "subtitle": "Avasta mugav ja kaasaegne õppeplatvorm, mis aitab õppida, areneda ja uusi võimalusi avastada",
+      "button": "Liitu meiega"
+    },
+    "footer": {
+      "slogan_main": "Loodud armastusega meie kõige väiksematele õppijatele",
+      "description": "Interaktiivne platvorm 2–7-aastaste laste õppimiseks ja arenguks mängu ja loovuse kaudu",
+      "categories": "Kategooriad",
+      "parents": {
+        "title": "Vanematele",
+        "about_platform": "Platvormist",
+        "learning_method": "Õppemetoodika",
+        "faq": "Korduma kippuvad küsimused",
+        "privacy_policy": "Privaatsuspoliitika"
+      },
+      "contact_us": "Võta meiega ühendust",
+      "rights_reserved": "Kõik õigused kaitstud",
+      "made_with": "Loodud",
+      "for_kids": "lastele"
     }
   }
 }
