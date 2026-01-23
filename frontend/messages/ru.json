@@ -8,6 +8,24 @@
     },
     "login": "Войти"
   },
+  "auth_dialog": {
+    "title_login": "Вход",
+    "title_register": "Регистрация",
+    "tab_login": "Войти",
+    "tab_register": "Регистрация",
+    "email_label": "Email",
+    "email_placeholder": "user@gmail.com",
+    "password_label": "Пароль",
+    "submit_login": "Войти",
+    "submit_register": "Создать аккаунт",
+    "divider_or": "или",
+    "google_continue": "Продолжить с Google",
+    "forgot_password": "Забыли пароль?",
+    "username_label": "Имя пользователя",
+    "username_placeholder": "user123",
+    "username_hint": "4–20 символов, только латинские буквы и цифры",
+    "password_hint": "Минимум 8 символов, 1 буква, 1 цифра, 1 спецсимвол"
+  },
   "main_page": {
     "hero": {
       "title": "Учимся с <yellow>удовольствием</yellow>!",

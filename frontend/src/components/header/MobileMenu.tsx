@@ -2,6 +2,7 @@ import React, { SetStateAction } from 'react';
 import { useTranslations } from 'next-intl';
 import { ArrowRight, X } from 'lucide-react';
 import { ButtonWrapper } from '@/components/ui/ButtonWrapper';
+import { useAuthDialog } from '@/store/authDialog';
 
 interface Props {
   isOpen: boolean;
@@ -10,6 +11,7 @@ interface Props {
 
 export default function MobileMenu({ isOpen, setIsOpen }: Props) {
   const t = useTranslations('header');
+  const openDialog = useAuthDialog((s) => s.open);
 
   return (
     <div
@@ -58,7 +60,9 @@ export default function MobileMenu({ isOpen, setIsOpen }: Props) {
         </nav>
 
         <div className="mt-8">
-          <ButtonWrapper icon={<ArrowRight />}>{t('login')}</ButtonWrapper>
+          <ButtonWrapper onClick={openDialog} icon={<ArrowRight />}>
+            {t('login')}
+          </ButtonWrapper>
         </div>
       </aside>
     </div>

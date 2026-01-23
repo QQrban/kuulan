@@ -2,9 +2,12 @@ import HeroBackground from '@/components/main_page/hero/HeroBackground';
 import { useTranslations } from 'next-intl';
 import { ButtonWrapper } from '@/components/ui/ButtonWrapper';
 import { Play } from 'lucide-react';
+import { useAuthDialog } from '@/store/authDialog';
 
 export default function BottomCTA() {
   const t = useTranslations('main_page.bottom_cta');
+  const openDialog = useAuthDialog((s) => s.open);
+
   return (
     <section className="max-w-6xl mx-auto text-center px-3 mt-12">
       <div className="w-full h-100 relative rounded-4xl overflow-hidden flex flex-col items-center justify-center px-3">
@@ -18,6 +21,7 @@ export default function BottomCTA() {
           </p>
           <div>
             <ButtonWrapper
+              onClick={() => openDialog()}
               variant="white"
               size="white"
               icon={<Play size={200} strokeWidth={3} />}

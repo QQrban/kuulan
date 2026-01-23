@@ -7,10 +7,12 @@ import { ArrowRight, Menu } from 'lucide-react';
 import { LanguageSwitcher } from '@/components/header/LanguageSwitcher';
 import { ButtonWrapper } from '@/components/ui/ButtonWrapper';
 import Logo from '@/components/shared/Logo';
+import { useAuthDialog } from '@/store/authDialog';
 
 export default function Header() {
   const t = useTranslations('header');
   const [isOpen, setIsOpen] = useState(false);
+  const openDialog = useAuthDialog((s) => s.open);
 
   return (
     <>
@@ -38,7 +40,9 @@ export default function Header() {
               <LanguageSwitcher />
             </div>
             <div className="hidden md:block">
-              <ButtonWrapper icon={<ArrowRight />}>{t('login')}</ButtonWrapper>
+              <ButtonWrapper onClick={openDialog} icon={<ArrowRight />}>
+                {t('login')}
+              </ButtonWrapper>
             </div>
             <div className="block md:hidden">
               <LanguageSwitcher />

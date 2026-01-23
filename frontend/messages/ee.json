@@ -8,6 +8,24 @@
     },
     "login": "Logi sisse"
   },
+  "auth_dialog": {
+    "title_login": "Sisselogimine",
+    "title_register": "Registreerimine",
+    "tab_login": "Logi sisse",
+    "tab_register": "Registreeru",
+    "email_label": "E-post",
+    "email_placeholder": "user@gmail.com",
+    "password_label": "Parool",
+    "submit_login": "Logi sisse",
+    "submit_register": "Loo konto",
+    "divider_or": "või",
+    "google_continue": "Jätka Google’iga",
+    "forgot_password": "Unustasid parooli?",
+    "username_label": "Kasutajanimi",
+    "username_placeholder": "user123",
+    "username_hint": "4–20 märki, ainult ladina tähed ja numbrid",
+    "password_hint": "Vähemalt 8 märki, 1 täht, 1 number, 1 erimärk"
+  },
   "main_page": {
     "hero": {
       "title": "Õpime <yellow>rõõmuga</yellow> ja <yellow>mängides</yellow>!",

@@ -8,6 +8,24 @@
     },
     "login": "Sign in"
   },
+  "auth_dialog": {
+    "title_login": "Sign in",
+    "title_register": "Sign up",
+    "tab_login": "Sign in",
+    "tab_register": "Sign up",
+    "email_label": "Email",
+    "email_placeholder": "user@gmail.com",
+    "password_label": "Password",
+    "submit_login": "Sign in",
+    "submit_register": "Create account",
+    "divider_or": "or",
+    "google_continue": "Continue with Google",
+    "forgot_password": "Forgot password?",
+    "username_label": "Username",
+    "username_placeholder": "user123",
+    "username_hint": "4–20 characters, only Latin letters and numbers",
+    "password_hint": "Minimum 8 characters, 1 letter, 1 number, 1 special character"
+  },
   "main_page": {
     "hero": {
       "title": "Learning is <yellow>fun</yellow> and <yellow>joyful</yellow>!",

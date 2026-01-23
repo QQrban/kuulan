@@ -2,8 +2,9 @@ import '../globals.css';
 import { Providers } from './providers';
 import { ReactNode } from 'react';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
-import { notFound } from 'next/dist/client/components/not-found';
+import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
+import AppShell from '@/components/layout/AppShell';
 
 export default async function LocaleLayout({
   children,
@@ -14,15 +15,15 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
 
-  if (!hasLocale(routing.locales, locale)) {
-    notFound();
-  }
+  if (!hasLocale(routing.locales, locale)) notFound();
 
   return (
     <html lang={locale}>
       <body>
         <NextIntlClientProvider>
-          <Providers>{children}</Providers>
+          <Providers>
+            <AppShell>{children}</AppShell>
+          </Providers>
         </NextIntlClientProvider>
       </body>
     </html>
