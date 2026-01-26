@@ -1,13 +1,19 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Headers, Post } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { CreateUserDto } from '../users/dto/create-user.dto';
 import { AuthService } from './auth.service';
 import { LoginDto } from './dto/login.dto';
+import { GoogleAuthDto } from '../users/dto/google-auth.dto';
 
 @ApiTags('Authorization')
 @Controller('auth')
 export class AuthController {
   constructor(private authService: AuthService) {}
+
+  @Post('google')
+  googleAuth(@Body() dto: GoogleAuthDto) {
+    return this.authService.googleAuth(dto);
+  }
 
   @Post('/login')
   login(@Body() userDto: LoginDto) {
@@ -15,7 +21,10 @@ export class AuthController {
   }
 
   @Post('/register')
-  register(@Body() userDto: CreateUserDto) {
-    return this.authService.register(userDto);
+  register(
+    @Body() userDto: CreateUserDto,
+    @Headers('accept-language') locale: string,
+  ) {
+    return this.authService.register(userDto, locale);
   }
 }

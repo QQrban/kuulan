@@ -10,6 +10,7 @@ import { I18nService } from 'nestjs-i18n';
 import * as bcrypt from 'bcrypt';
 import { User } from '../users/users.model';
 import { LoginDto } from './dto/login.dto';
+import { GoogleAuthDto } from '../users/dto/google-auth.dto';
 
 @Injectable()
 export class AuthService {
@@ -25,24 +26,32 @@ export class AuthService {
     return this.generateToken(user);
   }
 
-  async register(userDto: CreateUserDto) {
+  async register(userDto: CreateUserDto, locale?: string) {
     const candidateEmail = await this.userService.getUserByEmail(userDto.email);
+
     if (candidateEmail) {
       throw new ConflictException(
-        this.i18n.t('validation.registration.EMAIL_EXISTS'),
+        this.i18n.t('validation.registration.EMAIL_EXISTS', { lang: locale }),
       );
     }
 
-    const candidateUsername = await this.userService.getUserByUsername(
-      userDto.username,
-    );
-    if (candidateUsername) {
-      throw new ConflictException(
-        this.i18n.t('validation.registration.USERNAME_EXISTS'),
-      );
+    const user = await this.userService.createUser(userDto, locale);
+
+    return this.generateToken(user);
+  }
+
+  async googleAuth(dto: GoogleAuthDto) {
+    let user = await this.userService.getUserByGoogleId(dto.googleId);
+
+    if (!user) {
+      user = await this.userService.getUserByEmail(dto.email);
     }
 
-    const user = await this.userService.createUser(userDto);
+    if (!user) {
+      user = await this.userService.createGoogleUser(dto);
+    }
+
+    await this.userService.updateLastLogin(user.id);
 
     return this.generateToken(user);
   }
@@ -51,6 +60,12 @@ export class AuthService {
     const payload = { email: user.email, userId: user.id, role: user.role };
     return {
       token: this.jwtService.sign(payload),
+      user: {
+        id: user.id,
+        email: user.email,
+        username: user.username,
+        role: user.role,
+      },
     };
   }
 

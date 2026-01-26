@@ -6,7 +6,15 @@
       "parents": "Родителям",
       "contacts": "Контакты"
     },
-    "login": "Войти"
+    "login": "Войти",
+    "logout": "Выйти"
+  },
+  "profile_menu": {
+    "my_profile": "Мой профиль",
+    "my_games": "Мои игры",
+    "achievements": "Достижения",
+    "settings": "Настройки",
+    "logout": "Выйти"
   },
   "auth_dialog": {
     "title_login": "Вход",
@@ -21,10 +29,18 @@
     "divider_or": "или",
     "google_continue": "Продолжить с Google",
     "forgot_password": "Забыли пароль?",
-    "username_label": "Имя пользователя",
+    "username_label": "Имя пользователя (необязательно)",
     "username_placeholder": "user123",
     "username_hint": "4–20 символов, только латинские буквы и цифры",
-    "password_hint": "Минимум 8 символов, 1 буква, 1 цифра, 1 спецсимвол"
+    "password_hint": "Минимум 8 символов, 1 буква, 1 цифра, 1 спецсимвол",
+    "validation_required": "Это поле обязательно",
+    "validation_invalid_email": "Введите корректный адрес электронной почты",
+    "validation_password_min": "Пароль должен быть минимум 8 символов",
+    "validation_username_min": "Имя пользователя должно быть минимум 4 символа",
+    "validation_username_max": "Имя пользователя должно быть максимум 20 символов",
+    "validation_username_invalid": "Имя пользователя может содержать только буквы и цифры",
+    "validation_password_max": "Пароль должен быть максимум 255 символов",
+    "validation_password_weak": "Пароль должен содержать минимум 1 букву, 1 цифру и 1 символ"
   },
   "main_page": {
     "hero": {

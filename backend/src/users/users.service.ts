@@ -4,6 +4,8 @@ import { InjectModel } from '@nestjs/sequelize';
 import { CreateUserDto } from './dto/create-user.dto';
 import * as bcrypt from 'bcrypt';
 import { Role } from '../common/enums/role.enum';
+import { GoogleAuthDto } from './dto/google-auth.dto';
+import { generateUsername } from './helpers/username-generator';
 
 @Injectable()
 export class UsersService {
@@ -12,7 +14,7 @@ export class UsersService {
     private userRepository: typeof User,
   ) {}
 
-  async createUser(dto: CreateUserDto) {
+  async createUser(dto: CreateUserDto, locale?: string): Promise<User> {
     const existingUser = await this.userRepository.findOne({
       where: { email: dto.email },
     });
@@ -21,19 +23,30 @@ export class UsersService {
       throw new ConflictException('Email already exists');
     }
 
-    const existingUsername = await this.userRepository.findOne({
-      where: { username: dto.username },
-    });
+    console.log(locale);
 
-    if (existingUsername) {
-      throw new ConflictException('Username already exists');
-    }
+    const username = dto.username?.trim()
+      ? dto.username.trim()
+      : await generateUsername(this.userRepository, locale);
 
     const hashedPassword = await bcrypt.hash(dto.password, 10);
 
     return this.userRepository.create({
-      ...dto,
+      email: dto.email,
+      username,
       password: hashedPassword,
+    });
+  }
+
+  async createGoogleUser(dto: GoogleAuthDto): Promise<User> {
+    const username =
+      dto.name?.replace(/\s+/g, '_').toLowerCase() || dto.email.split('@')[0];
+
+    return this.userRepository.create({
+      email: dto.email,
+      username: username,
+      password: '',
+      googleId: dto.googleId,
     });
   }
 
@@ -64,5 +77,9 @@ export class UsersService {
 
   async updateRole(userId: string, role: Role) {
     await this.userRepository.update({ role }, { where: { id: userId } });
+  }
+
+  async getUserByGoogleId(googleId: string): Promise<User | null> {
+    return this.userRepository.findOne({ where: { googleId } });
   }
 }

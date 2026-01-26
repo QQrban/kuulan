@@ -5,7 +5,8 @@ import { Role } from '../common/enums/role.enum';
 interface UserCreationAttrs {
   email: string;
   password: string;
-  username: string;
+  username?: string;
+  googleId?: string;
 }
 
 @Table({ tableName: 'users' })
@@ -17,6 +18,13 @@ export class User extends Model<User, UserCreationAttrs> {
     primaryKey: true,
   })
   declare id: string;
+
+  @Column({
+    type: DataType.STRING,
+    allowNull: true,
+    unique: true,
+  })
+  declare googleId: string;
 
   @ApiProperty({ example: 'user@gmail.com', description: 'User email address' })
   @Column({
@@ -39,8 +47,8 @@ export class User extends Model<User, UserCreationAttrs> {
   @ApiProperty({ example: 'user123', description: 'Username (min 4 len)' })
   @Column({
     type: DataType.STRING,
-    unique: true,
-    allowNull: false,
+    unique: false,
+    allowNull: true,
   })
   declare username: string;
 

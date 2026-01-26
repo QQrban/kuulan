@@ -31,7 +31,7 @@ export function LanguageSwitcher() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <div className="flex cursor-pointer items-center gap-2">
+        <div className="flex cursor-pointer items-center gap-2 shrink-0">
           <Image
             src={currentLang.flag}
             alt={currentLang.label}

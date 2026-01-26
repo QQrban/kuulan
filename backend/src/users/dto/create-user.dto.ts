@@ -1,5 +1,6 @@
 import {
   IsEmail,
+  IsOptional,
   IsString,
   Matches,
   MaxLength,
@@ -10,7 +11,12 @@ import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateUserDto {
   @ApiProperty({ example: 'user@gmail.com', description: 'User email address' })
-  @IsEmail()
+  @IsEmail(
+    {},
+    {
+      message: i18nValidationMessage('validation.registration.INVALID_EMAIL'),
+    },
+  )
   readonly email: string;
 
   @ApiProperty({
@@ -29,11 +35,12 @@ export class CreateUserDto {
     example: 'user123',
     description: 'Username (min 4 len) (max 20 len)',
   })
+  @IsOptional()
   @IsString()
   @MinLength(4)
   @MaxLength(20)
-  @Matches(/^[a-zA-Z0-9]+$/, {
+  @Matches(/^[\p{Script=Latin}\p{Script=Cyrillic}0-9_-]+$/u, {
     message: i18nValidationMessage('validation.registration.USERNAME_INVALID'),
   })
-  readonly username: string;
+  readonly username?: string;
 }
