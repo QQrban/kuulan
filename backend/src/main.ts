@@ -28,6 +28,8 @@ async function start() {
     .addTag('Kuulan')
     .build();
 
+  app.setGlobalPrefix('api');
+
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('/api/docs', app, document);
 

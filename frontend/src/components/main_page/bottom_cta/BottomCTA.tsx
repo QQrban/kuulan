@@ -3,10 +3,12 @@ import { useTranslations } from 'next-intl';
 import { ButtonWrapper } from '@/components/ui/ButtonWrapper';
 import { Play } from 'lucide-react';
 import { useAuthDialog } from '@/store/authDialog';
+import { useAuth } from '@/store/auth';
 
 export default function BottomCTA() {
   const t = useTranslations('main_page.bottom_cta');
   const openDialog = useAuthDialog((s) => s.open);
+  const { isAuthenticated } = useAuth();
 
   return (
     <section className="max-w-6xl mx-auto text-center px-3 mt-12">
@@ -20,14 +22,16 @@ export default function BottomCTA() {
             {t('subtitle')}
           </p>
           <div>
-            <ButtonWrapper
-              onClick={() => openDialog()}
-              variant="white"
-              size="white"
-              icon={<Play size={200} strokeWidth={3} />}
-            >
-              {t('button')}
-            </ButtonWrapper>
+            {!isAuthenticated && (
+              <ButtonWrapper
+                onClick={() => openDialog()}
+                variant="white"
+                size="white"
+                icon={<Play size={200} strokeWidth={3} />}
+              >
+                {t('button')}
+              </ButtonWrapper>
+            )}
           </div>
         </div>
       </div>

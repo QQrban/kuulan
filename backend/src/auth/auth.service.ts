@@ -40,7 +40,7 @@ export class AuthService {
     return this.generateToken(user);
   }
 
-  async googleAuth(dto: GoogleAuthDto) {
+  async googleAuth(dto: GoogleAuthDto, locale?: string) {
     let user = await this.userService.getUserByGoogleId(dto.googleId);
 
     if (!user) {
@@ -48,7 +48,7 @@ export class AuthService {
     }
 
     if (!user) {
-      user = await this.userService.createGoogleUser(dto);
+      user = await this.userService.createGoogleUser(dto, locale);
     }
 
     await this.userService.updateLastLogin(user.id);

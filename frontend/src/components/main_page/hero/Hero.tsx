@@ -1,12 +1,15 @@
 import HeroBackground from '@/components/main_page/hero/HeroBackground';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { Play } from 'lucide-react';
 import { ButtonWrapper } from '@/components/ui/ButtonWrapper';
 import { AgeBadge } from '@/components/shared/ageBadge';
 import Image from 'next/image';
 import bear from '@/../public/bear.png';
+import { useRouter } from 'next/navigation';
 
 export default function Hero() {
+  const router = useRouter();
+  const locale = useLocale();
   const t = useTranslations('main_page.hero');
   return (
     <div className="relative min-h-150 flex flex-col items-center justify-center text-center">
@@ -28,6 +31,7 @@ export default function Hero() {
         </p>
         <div className="flex justify-center gap-6 flex-col sm:flex-row w-75 sm:w-full mx-auto">
           <ButtonWrapper
+            onClick={() => router.push(`/${locale}/games`)}
             variant="white"
             size="white"
             icon={<Play size={200} strokeWidth={3} />}

@@ -1,5 +1,6 @@
 import NextAuth from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
+import { cookies } from 'next/headers';
 
 const handler = NextAuth({
   providers: [
@@ -10,29 +11,24 @@ const handler = NextAuth({
   ],
   callbacks: {
     async signIn({ user, account }) {
-      console.log('=== signIn callback ===');
-      console.log('Provider:', account?.provider);
-      console.log('User:', user);
+      const cookieStore = await cookies();
+      const locale = cookieStore.get('NEXT_LOCALE')?.value ?? 'en';
 
       if (account?.provider === 'google') {
         try {
-          console.log('Sending to backend:', {
-            email: user.email,
-            name: user.name,
-            googleId: account.providerAccountId,
-          });
-
-          const res = await fetch(`${process.env.BACKEND_URL}/auth/google`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              email: user.email,
-              name: user.name,
-              googleId: account.providerAccountId,
-            }),
-          });
-
-          console.log('Backend response status:', res.status);
+          const res = await fetch(
+            `${process.env.BACKEND_URL}/api/auth/google`,
+            {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                email: user.email,
+                name: user.name,
+                googleId: account.providerAccountId,
+                locale,
+              }),
+            }
+          );
 
           if (!res.ok) {
             const errorData = await res.json();
@@ -41,7 +37,6 @@ const handler = NextAuth({
           }
 
           const data = await res.json();
-          console.log('Backend data:', data);
 
           user.token = data.token;
           user.id = data.user.id;
@@ -71,7 +66,7 @@ const handler = NextAuth({
       return session;
     },
   },
-  debug: true, // Включает дополнительные логи
+  debug: true,
 });
 
 export { handler as GET, handler as POST };

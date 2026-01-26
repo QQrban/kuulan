@@ -10,7 +10,7 @@ export function AgeBadge() {
         className="h-7 w-7 text-yellow-400 animate-pulse"
         strokeWidth={1.5}
       />
-      <span className="text-md font-extralight tracking-tight text-violet-500 tracking-wide">
+      <span className="text-md font-extralight text-violet-500 tracking-wide">
         {t('badge')}
       </span>
     </div>

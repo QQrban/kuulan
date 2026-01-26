@@ -10,6 +10,7 @@ import Logo from '@/components/shared/Logo';
 import { useAuthDialog } from '@/store/authDialog';
 import { useAuth } from '@/store/auth';
 import { ProfileDropDown } from '@/components/header/ProfileDropDown';
+import NavLinks from '@/components/header/NavLinks';
 
 export default function Header() {
   const t = useTranslations('header');
@@ -24,20 +25,9 @@ export default function Header() {
         <div className="mx-auto flex max-w-6xl items-center justify-between px-3 py-4">
           <Logo />
 
-          <nav className="hidden items-center gap-7 lg:gap-10 text-base font-medium text-(--text-muted) md:flex">
-            <a className="transition-colors hover:text-(--text-main)" href="#">
-              {t('nav.games')}
-            </a>
-            <a className="transition-colors hover:text-(--text-main)" href="#">
-              {t('nav.about')}
-            </a>
-            <a className="transition-colors hover:text-(--text-main)" href="#">
-              {t('nav.parents')}
-            </a>
-            <a className="transition-colors hover:text-(--text-main)" href="#">
-              {t('nav.contacts')}
-            </a>
-          </nav>
+          <div className="hidden md:block">
+            <NavLinks />
+          </div>
 
           <div className="flex items-center gap-4">
             {isAuthenticated ? (
@@ -75,7 +65,7 @@ export default function Header() {
         </div>
       </header>
 
-      {!isAuthenticated && <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} />}
+      <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} />
     </>
   );
 }

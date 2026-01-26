@@ -1,9 +1,11 @@
 'use client';
 
-import { AuthDialog } from '@/components/auth/AuthDialog';
 import { ReactNode, useEffect } from 'react';
-import { useAuth } from '@/store/auth';
 import { useSession } from 'next-auth/react';
+import { useAuth } from '@/store/auth';
+import { AuthDialog } from '@/components/auth/AuthDialog';
+import Header from '@/components/header/Header';
+import Footer from '@/components/footer/Footer';
 
 export default function AppShell({ children }: { children: ReactNode }) {
   const initAuth = useAuth((s) => s.initAuth);
@@ -27,9 +29,11 @@ export default function AppShell({ children }: { children: ReactNode }) {
   }, [session, setAuth]);
 
   return (
-    <>
-      {children}
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-1">{children}</main>
+      <Footer />
       <AuthDialog />
-    </>
+    </div>
   );
 }

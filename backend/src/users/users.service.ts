@@ -23,8 +23,6 @@ export class UsersService {
       throw new ConflictException('Email already exists');
     }
 
-    console.log(locale);
-
     const username = dto.username?.trim()
       ? dto.username.trim()
       : await generateUsername(this.userRepository, locale);
@@ -38,13 +36,14 @@ export class UsersService {
     });
   }
 
-  async createGoogleUser(dto: GoogleAuthDto): Promise<User> {
-    const username =
-      dto.name?.replace(/\s+/g, '_').toLowerCase() || dto.email.split('@')[0];
+  async createGoogleUser(dto: GoogleAuthDto, locale?: string): Promise<User> {
+    const username = dto.username?.trim()
+      ? dto.username.trim()
+      : await generateUsername(this.userRepository, locale);
 
     return this.userRepository.create({
       email: dto.email,
-      username: username,
+      username,
       password: '',
       googleId: dto.googleId,
     });

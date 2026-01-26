@@ -4,6 +4,8 @@ import { ArrowRight, X } from 'lucide-react';
 import { ButtonWrapper } from '@/components/ui/ButtonWrapper';
 import { useAuthDialog } from '@/store/authDialog';
 import { useAuth } from '@/store/auth';
+import Logo from '@/components/shared/Logo';
+import { Link } from '@/i18n/routing';
 
 interface Props {
   isOpen: boolean;
@@ -14,7 +16,7 @@ export default function MobileMenu({ isOpen, setIsOpen }: Props) {
   const t = useTranslations('header');
   const openDialog = useAuthDialog((s) => s.open);
 
-  const { isAuthenticated, user, logout } = useAuth();
+  const { isAuthenticated } = useAuth();
 
   return (
     <div
@@ -36,7 +38,9 @@ export default function MobileMenu({ isOpen, setIsOpen }: Props) {
         aria-label="Mobile menu"
       >
         <div className="flex items-center justify-between">
-          <span className="text-xl font-semibold text-(--brand-1)">Kuulan</span>
+          <span className="text-xl font-semibold text-(--brand-1)">
+            <Logo showText={false} />
+          </span>
           <button
             type="button"
             className="rounded-md p-2 text-(--text-main) transition-colors hover:bg-(--header-bg)"
@@ -48,9 +52,12 @@ export default function MobileMenu({ isOpen, setIsOpen }: Props) {
         </div>
 
         <nav className="mt-8 flex flex-col gap-4 text-base font-medium text-(--text-muted)">
-          <a className="transition-colors hover:text-(--text-main)" href="#">
+          <Link
+            className="transition-colors hover:text-(--text-main) block md:hidden"
+            href="/games"
+          >
             {t('nav.games')}
-          </a>
+          </Link>
           <a className="transition-colors hover:text-(--text-main)" href="#">
             {t('nav.about')}
           </a>
@@ -62,12 +69,13 @@ export default function MobileMenu({ isOpen, setIsOpen }: Props) {
           </a>
         </nav>
 
-        {}
-        <div className="mt-8">
-          <ButtonWrapper onClick={openDialog} icon={<ArrowRight />}>
-            {t('login')}
-          </ButtonWrapper>
-        </div>
+        {!isAuthenticated && (
+          <div className="mt-8">
+            <ButtonWrapper onClick={openDialog} icon={<ArrowRight />}>
+              {t('login')}
+            </ButtonWrapper>
+          </div>
+        )}
       </aside>
     </div>
   );

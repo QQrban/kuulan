@@ -9,7 +9,15 @@
     "login": "Sign in",
     "logout": "Log out"
   },
+  "footer": {
+    "description": "An interactive platform for learning and development of children aged 2–7 through play and creativity",
+    "contact_us": "Contact us",
+    "rights_reserved": "All rights reserved",
+    "made_with": "Made with",
+    "for_kids": "for kids"
+  },
   "profile_menu": {
+    "play": "Play",
     "my_profile": "My Profile",
     "my_games": "My Games",
     "achievements": "Achievements",
@@ -43,6 +51,7 @@
     "validation_password_weak": "Password must contain at least 1 letter, 1 number, and 1 symbol"
   },
   "main_page": {
+    "slogan_main": "Created with love for our youngest learners",
     "hero": {
       "title": "Learning is <yellow>fun</yellow> and <yellow>joyful</yellow>!",
       "subtitle": "Fun games and activities that help develop your child's thinking, creativity, and new knowledge.",
@@ -116,22 +125,73 @@
       "title": "Start your adventure in the world of knowledge!",
       "subtitle": "Discover a convenient and modern learning platform that helps you learn, grow, and explore new opportunities",
       "button": "Join us"
+    }
+  },
+  "games": {
+    "select_age": {
+      "title": "<purple>Please select the</purple> <rose>child’s age</rose>",
+      "card": {
+        "twoYears": { "age": "2 years", "title": "First steps" },
+        "threeYears": { "age": "3 years", "title": "Getting started" },
+        "fourYears": { "age": "4 years", "title": "Confident skills" },
+        "fiveYears": { "age": "5 years", "title": "Learning and exploring" },
+        "sixYears": { "age": "6 years", "title": "Ready for school" },
+        "sevenYears": { "age": "7 years", "title": "Growing independence" }
+      }
     },
-    "footer": {
-      "slogan_main": "Created with love for our youngest learners",
-      "description": "An interactive platform for learning and development of children aged 2–7 through play and creativity",
-      "categories": "Categories",
-      "parents": {
-        "title": "For parents",
-        "about_platform": "About the Platform",
-        "learning_method": "Learning Methodology",
-        "faq": "Frequently Asked Questions",
-        "privacy_policy": "Privacy Policy"
-      },
-      "contact_us": "Contact us",
-      "rights_reserved": "All rights reserved",
-      "made_with": "Made with",
-      "for_kids": "for kids"
+    "list": {
+      "title": "Educational games for <blue>{age}-year-old children</blue>",
+      "description": "A collection of fun and educational games for {age}-year-old children. Develop attention, memory, and thinking through play.",
+      "categories": {
+        "alphabet": {
+          "title": "Alphabet",
+          "description": "Learn to recognize letters, connect them with sounds, and form your first words."
+        },
+        "colors": {
+          "title": "Colors",
+          "description": "Learn to recognize basic colors."
+        },
+        "shapes": {
+          "title": "Shapes",
+          "description": "Circle, square, triangle, and other simple shapes."
+        },
+        "sounds": {
+          "title": "Sounds & speech",
+          "description": "Repeat sounds and learn first words."
+        },
+        "movement": {
+          "title": "Movement",
+          "description": "Tap, drag, and build coordination."
+        },
+        "sorting": {
+          "title": "Find & Match",
+          "description": "Find what goes together: big and small, same and different."
+        },
+        "numbers": {
+          "title": "Numbers",
+          "description": "Learn to recognize numbers, count objects, and discover how many there are."
+        },
+        "puzzles": {
+          "title": "Puzzles",
+          "description": "Simple puzzles with 2–4 pieces."
+        },
+        "animals": {
+          "title": "Animals",
+          "description": "Meet animals and learn their sounds."
+        },
+        "everyday": {
+          "title": "Everyday things",
+          "description": "Daily objects: food, clothes, toys."
+        },
+        "music": {
+          "title": "Music & rhythm",
+          "description": "Listen, copy rhythms, and play with sounds."
+        },
+        "emotions": {
+          "title": "Emotions",
+          "description": "Learn to recognize emotions in pictures."
+        }
+      }
     }
   }
 }

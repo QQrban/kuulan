@@ -1,7 +1,6 @@
 'use client';
 
 import { useSession } from 'next-auth/react';
-import Header from '../../components/header/Header';
 import MainPage from '@/components/main_page';
 
 export default function Home() {
@@ -12,13 +11,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      <Header />
-      <main>
-        <MainPage />
-      </main>
+      <MainPage />
     </div>
   );
 }
-
-/*<p>Вы не авторизованы</p>*/
-/*<button onClick={() => signIn('google')}>Войти через Google</button>*/

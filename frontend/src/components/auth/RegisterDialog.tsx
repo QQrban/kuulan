@@ -44,7 +44,7 @@ export function RegisterDialog() {
 
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/register`,
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/register`,
         {
           method: 'POST',
           headers: {

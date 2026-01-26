@@ -24,8 +24,8 @@ export default function Categories() {
         <div className="mt-14 grid w-full justify-items-center gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           <CategoryCard
             icon={<BookOpen size={26} strokeWidth={2.5} />}
-            accentColor="#A855F7"
-            tintColor="#F3E8FF"
+            accentColor="var(--accent-purple)"
+            tintColor="var(--bg-purple)"
             title={t('cards.letters.title')}
             description={t('cards.letters.description')}
             countText={t('cards.letters.count', { count: 15 })}
@@ -34,8 +34,8 @@ export default function Categories() {
 
           <CategoryCard
             icon={<Calculator size={26} strokeWidth={2.5} />}
-            accentColor="#EC4899"
-            tintColor="#FCE7F3"
+            accentColor="var(--accent-rose)"
+            tintColor="var(--bg-rose)"
             title={t('cards.numbers.title')}
             description={t('cards.numbers.description')}
             countText={t('cards.numbers.count', { count: 12 })}
@@ -44,8 +44,8 @@ export default function Categories() {
 
           <CategoryCard
             icon={<Shapes size={26} strokeWidth={2.5} />}
-            accentColor="#3B82F6"
-            tintColor="#DBEAFE"
+            accentColor="var(--accent-blue)"
+            tintColor="var(--bg-blue)"
             title={t('cards.shapes.title')}
             description={t('cards.shapes.description')}
             countText={t('cards.shapes.count', { count: 10 })}
@@ -54,8 +54,8 @@ export default function Categories() {
 
           <CategoryCard
             icon={<Globe size={26} strokeWidth={2.5} />}
-            accentColor="#22C55E"
-            tintColor="#DCFCE7"
+            accentColor="var(--accent-green)"
+            tintColor="var(--bg-green)"
             title={t('cards.world.title')}
             description={t('cards.world.description')}
             countText={t('cards.world.count', { count: 18 })}

@@ -15,17 +15,21 @@ const languages = [
   { code: 'ee', label: 'Eesti', flag: '/icons/flag-ee.svg' },
 ];
 
+const LOCALES_RE = /^\/(en|ru|ee)(?=\/|$)/;
+
 export function LanguageSwitcher() {
   const router = useRouter();
   const pathname = usePathname();
-  const currentLocale = pathname.split('/')[1];
+
+  const currentLocale = pathname.match(LOCALES_RE)?.[1] ?? 'en';
   const currentLang =
     languages.find((lang) => lang.code === currentLocale) || languages[0];
 
   const switchLanguage = (locale: string) => {
-    const segments = pathname.split('/');
-    segments[1] = locale;
-    router.push(segments.join('/'));
+    const nextPath = LOCALES_RE.test(pathname)
+      ? pathname.replace(LOCALES_RE, `/${locale}`)
+      : `/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`;
+    router.push(nextPath);
   };
 
   return (
@@ -35,26 +39,21 @@ export function LanguageSwitcher() {
           <Image
             src={currentLang.flag}
             alt={currentLang.label}
-            width={28}
-            height={20}
-            className="md:hidden"
-          />
-          <Image
-            src={currentLang.flag}
-            alt={currentLang.label}
-            width={20}
+            width={30}
             height={14}
-            className="hidden md:block"
           />
           <span className="hidden lg:inline">{currentLang.label}</span>
         </div>
       </DropdownMenuTrigger>
+
       <DropdownMenuContent className="w-40">
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
             onClick={() => switchLanguage(lang.code)}
-            className={`flex items-center gap-2 ${lang.code === currentLocale ? 'bg-accent' : ''}`}
+            className={`flex items-center gap-2 ${
+              lang.code === currentLocale ? 'bg-accent' : ''
+            }`}
           >
             <Image src={lang.flag} alt={lang.label} width={20} height={14} />
             {lang.label}

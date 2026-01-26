@@ -9,7 +9,15 @@
     "login": "Logi sisse",
     "logout": "Logi välja"
   },
+  "footer": {
+    "description": "Interaktiivne platvorm 2–7-aastaste laste õppimiseks ja arenguks mängu ja loovuse kaudu",
+    "contact_us": "Võta meiega ühendust",
+    "rights_reserved": "Kõik õigused kaitstud",
+    "made_with": "Loodud",
+    "for_kids": "lastele"
+  },
   "profile_menu": {
+    "play": "Mängima!",
     "my_profile": "Minu profiil",
     "my_games": "Minu mängud",
     "achievements": "Saavutused",
@@ -43,6 +51,7 @@
     "validation_password_weak": "Parool peab sisaldama vähemalt 1 tähte, 1 numbrit ja 1 sümbolit"
   },
   "main_page": {
+    "slogan_main": "Loodud armastusega meie kõige väiksematele õppijatele",
     "hero": {
       "title": "Õpime <yellow>rõõmuga</yellow> ja <yellow>mängides</yellow>!",
       "subtitle": "Lõbusad mängud ja tegevused, mis aitavad arendada sinu lapse mõtlemist, loovust ja uusi teadmisi.",
@@ -116,22 +125,73 @@
       "title": "Alusta oma seiklust teadmiste maailmas!",
       "subtitle": "Avasta mugav ja kaasaegne õppeplatvorm, mis aitab õppida, areneda ja uusi võimalusi avastada",
       "button": "Liitu meiega"
+    }
+  },
+  "games": {
+    "select_age": {
+      "title": "<purple>Palun valige</purple> <rose>lapse vanus</rose>",
+      "card": {
+        "twoYears": { "age": "2 aastat", "title": "Esimesed sammud" },
+        "threeYears": { "age": "3 aastat", "title": "Alustame õppimist" },
+        "fourYears": { "age": "4 aastat", "title": "Kindlad oskused" },
+        "fiveYears": { "age": "5 aastat", "title": "Õpime ja avastame" },
+        "sixYears": { "age": "6 aastat", "title": "Kooliks valmis" },
+        "sevenYears": { "age": "7 aastat", "title": "Iseseisvus" }
+      }
     },
-    "footer": {
-      "slogan_main": "Loodud armastusega meie kõige väiksematele õppijatele",
-      "description": "Interaktiivne platvorm 2–7-aastaste laste õppimiseks ja arenguks mängu ja loovuse kaudu",
-      "categories": "Kategooriad",
-      "parents": {
-        "title": "Vanematele",
-        "about_platform": "Platvormist",
-        "learning_method": "Õppemetoodika",
-        "faq": "Korduma kippuvad küsimused",
-        "privacy_policy": "Privaatsuspoliitika"
-      },
-      "contact_us": "Võta meiega ühendust",
-      "rights_reserved": "Kõik õigused kaitstud",
-      "made_with": "Loodud",
-      "for_kids": "lastele"
+    "list": {
+      "title": "Arendavad mängud <blue>{age}-aastastele lastele</blue>",
+      "description": "Valik lõbusaid ja õpetlikke mänge {age}-aastastele lastele. Arenda tähelepanu, mälu ja mõtlemist läbi mängu.",
+      "categories": {
+        "alphabet": {
+          "title": "Tähestik",
+          "description": "Õpime tähti ära tundma, seostama neid helidega ja moodustama esimesi sõnu."
+        },
+        "colors": {
+          "title": "Värvid",
+          "description": "Õpime tundma põhivärve."
+        },
+        "shapes": {
+          "title": "Kujundid",
+          "description": "Ring, ruut, kolmnurk ja teised lihtsad kujundid."
+        },
+        "sounds": {
+          "title": "Helid ja kõne",
+          "description": "Kordame helisid ja õpime esimesi sõnu."
+        },
+        "movement": {
+          "title": "Liikumine",
+          "description": "Puudutame, lohistame ja arendame koordinatsiooni."
+        },
+        "sorting": {
+          "title": "Leia ja sobita",
+          "description": "Leiame, mis sobib kokku: suur ja väike, sama ja erinev."
+        },
+        "puzzles": {
+          "title": "Pusled",
+          "description": "Lihtsad pusled 2–4 tükiga."
+        },
+        "animals": {
+          "title": "Loomad",
+          "description": "Õpime loomi ja nende hääli."
+        },
+        "numbers": {
+          "title": "Numbrid",
+          "description": "Õpime numbreid ära tundma, esemeid lugema ja mõistma, kui palju neid on."
+        },
+        "everyday": {
+          "title": "Asjad ümberringi",
+          "description": "Igapäevased asjad: toit, riided, mänguasjad."
+        },
+        "music": {
+          "title": "Muusika ja rütm",
+          "description": "Kuulame, kordame rütme ja mängime helidega."
+        },
+        "emotions": {
+          "title": "Emotsioonid",
+          "description": "Õpime piltidelt emotsioone ära tundma."
+        }
+      }
     }
   }
 }

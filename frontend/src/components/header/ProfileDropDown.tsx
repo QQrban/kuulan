@@ -12,8 +12,16 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { useAuth } from '@/store/auth';
 import noAvatar from '@/../public/avatars/animal-coelho-rabbit-svgrepo-com.svg';
-import { Gamepad2, LogOut, Settings, Trophy, User as UserIcon, } from 'lucide-react';
+import {
+  Gamepad2,
+  Heart,
+  LogOut,
+  Settings,
+  Trophy,
+  User as UserIcon,
+} from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 
 export function ProfileDropDown() {
   const { user, logout } = useAuth();
@@ -61,18 +69,28 @@ export function ProfileDropDown() {
         <DropdownMenuSeparator className="my-0 mx-0" />
 
         <DropdownMenuGroup className="p-2">
+          <DropdownMenuItem
+            asChild
+            className="h-12 rounded-xl px-4 gap-3 cursor-pointer"
+          >
+            <Link href="/games" className="flex items-center gap-3 w-full">
+              <Gamepad2 className="h-5 w-5 text-(--brand-1)" />
+              <span className="text-base">{t('play')}!</span>
+            </Link>
+          </DropdownMenuItem>
+
           <DropdownMenuItem className="h-12 rounded-xl px-4 gap-3 cursor-pointer">
-            <UserIcon className="h-5 w-5 text-[color-mix(in_oklab,var(--brand-1)_80%,var(--brand-2))]" />
+            <UserIcon className="h-5 w-5 text-(--accent-green)" />
             <span className="text-base">{t('my_profile')}</span>
           </DropdownMenuItem>
 
           <DropdownMenuItem className="h-12 rounded-xl px-4 gap-3 cursor-pointer">
-            <Gamepad2 className="h-5 w-5 text-[color-mix(in_oklab,var(--brand-1)_80%,var(--brand-2))]" />
+            <Heart className="h-5 w-5 text-destructive" />
             <span className="text-base">{t('my_games')}</span>
           </DropdownMenuItem>
 
           <DropdownMenuItem className="h-12 rounded-xl px-4 gap-3 cursor-pointer">
-            <Trophy className="h-5 w-5 text-chart-4" />
+            <Trophy className="h-5 w-5 text-chart-5" />
             <span className="text-base">{t('achievements')}</span>
           </DropdownMenuItem>
 

@@ -11,8 +11,8 @@ export class AuthController {
   constructor(private authService: AuthService) {}
 
   @Post('google')
-  googleAuth(@Body() dto: GoogleAuthDto) {
-    return this.authService.googleAuth(dto);
+  google(@Body() dto: GoogleAuthDto, @Body('locale') locale?: string) {
+    return this.authService.googleAuth(dto, locale);
   }
 
   @Post('/login')
