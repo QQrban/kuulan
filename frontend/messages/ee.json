@@ -191,7 +191,68 @@
           "title": "Emotsioonid",
           "description": "Õpime piltidelt emotsioone ära tundma."
         }
+      },
+      "games": {
+        "alphabet_tracing": {
+          "title": "Õpi Tähti",
+          "description": "Jälgi ja avasta tähti, et arendada lugemisoskust"
+        },
+        "color_match": {
+          "title": "Leia Värvid",
+          "description": "Puuduta õiget värvi ja vaata, millised pildid ilmuvad"
+        },
+        "shape_match": {
+          "title": "Milline Kujund?",
+          "description": "Leia õige kujund ja puuduta seda"
+        },
+        "instrument_sounds": {
+          "title": "Mängi Pille",
+          "description": "Puuduta pilli ja kuula selle heli"
+        },
+        "follow_the_moves": {
+          "title": "Liigu Koos Minuga",
+          "description": "Hüppa, plaksuta ja korda liigutusi"
+        },
+        "sort_by_size": {
+          "title": "Suur või Väike?",
+          "description": "Pane asjad õigesse kohta suuruse järgi"
+        },
+        "simple_puzzles": {
+          "title": "Pane Pilt Kokku",
+          "description": "Pane tükid kokku ja vaata, mis pilt tekib"
+        },
+        "animal_sounds": {
+          "title": "Loomade Hääled",
+          "description": "Puuduta looma ja kuula, mis häält ta teeb"
+        },
+        "animal_shadows": {
+          "title": "Kes on Varjus?",
+          "description": "Vaata varju ja leia õige loom"
+        },
+        "daily_routines": {
+          "title": "Minu Päev",
+          "description": "Õpi, mida me iga päev teeme"
+        },
+        "tap_the_rhythm": {
+          "title": "Vajuta muusika saatel",
+          "description": "Puuduta ja plaksuta muusika rütmis"
+        },
+        "feelings_faces": {
+          "title": "Milline Emotsioon?",
+          "description": "Vaata nägu ja vali õige tunne"
+        },
+        "lets_count": {
+          "title": "Loendame!",
+          "description": "Mängi loendamismänge ja õpi numbreid lõbusalt"
+        },
+        "animal_quiz": {
+          "title": "Loomade Viktoriin",
+          "description": "Vasta lihtsatele küsimustele ja vali õige loom"
+        }
       }
     }
+  },
+  "shared": {
+    "back": "Tagasi"
   }
 }

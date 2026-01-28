@@ -10,7 +10,7 @@ interface CategoryCreationAttrs {
 
 @Table({ tableName: 'categories' })
 export class Category extends Model<Category, CategoryCreationAttrs> {
-  @ApiProperty({ example: 'uuid' })
+  @ApiProperty({ example: '550e8400-e29b-41d4-a716-446655440000' })
   @Column({
     type: DataType.UUID,
     defaultValue: DataType.UUIDV4,
@@ -22,13 +22,16 @@ export class Category extends Model<Category, CategoryCreationAttrs> {
   @Column({ type: DataType.STRING, allowNull: false, unique: true })
   declare name: string;
 
+  @ApiProperty({
+    description: 'i18n key for game title',
+    example: 'games.colorsBasic.title',
+  })
   @Column({ type: DataType.STRING, allowNull: false })
   declare titleKey: string;
 
   @Column({ type: DataType.STRING, allowNull: false })
   declare descriptionKey: string;
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   @HasMany(() => CategoryAge)
   declare ages: CategoryAge[];
 }

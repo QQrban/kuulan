@@ -4,7 +4,7 @@ import { Play } from 'lucide-react';
 import { ButtonWrapper } from '@/components/ui/ButtonWrapper';
 import { AgeBadge } from '@/components/shared/ageBadge';
 import Image from 'next/image';
-import bear from '@/../public/bear.png';
+import bear from '../../../../public/landing/bear.png';
 import { useRouter } from 'next/navigation';
 
 export default function Hero() {

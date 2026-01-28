@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import logo from '@/../public/kuulan.svg';
+import logo from '../../../public/logos/kuulan.svg';
 import { JSX } from 'react';
 
 interface LogoProps {

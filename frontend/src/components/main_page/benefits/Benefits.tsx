@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import gameExample from '@/../public/game-example.png';
+import gameExample from '../../../../public/landing/game-example.png';
 import { useTranslations } from 'next-intl';
 import { Check } from 'lucide-react';
 

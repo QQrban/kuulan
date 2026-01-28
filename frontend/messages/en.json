@@ -191,7 +191,68 @@
           "title": "Emotions",
           "description": "Learn to recognize emotions in pictures."
         }
+      },
+      "games": {
+        "alphabet_tracing": {
+          "title": "Learn the Letters",
+          "description": "Trace and explore letters to build early reading skills"
+        },
+        "color_match": {
+          "title": "Find the Color",
+          "description": "Tap the right color"
+        },
+        "shape_match": {
+          "title": "Which Shape?",
+          "description": "Find the right shape and tap it"
+        },
+        "instrument_sounds": {
+          "title": "Play the Instruments",
+          "description": "Tap an instrument and listen to its sound"
+        },
+        "follow_the_moves": {
+          "title": "Move with Me",
+          "description": "Jump, clap, and copy the moves"
+        },
+        "sort_by_size": {
+          "title": "Big or Small?",
+          "description": "Put things in the right place by size"
+        },
+        "simple_puzzles": {
+          "title": "Put the Picture Together",
+          "description": "Put the pieces together and see the picture"
+        },
+        "animal_sounds": {
+          "title": "Animal Sounds",
+          "description": "Tap the animal and hear its sound"
+        },
+        "animal_shadows": {
+          "title": "Who Is in the Shadow?",
+          "description": "Look at the shadow and find the animal"
+        },
+        "daily_routines": {
+          "title": "My Day",
+          "description": "Learn what we do every day"
+        },
+        "tap_the_rhythm": {
+          "title": "Press to the music",
+          "description": "Tap and clap with the music"
+        },
+        "feelings_faces": {
+          "title": "Which Emotion?",
+          "description": "Look at the face and choose the feeling"
+        },
+        "lets_count": {
+          "title": "Let’s Count!",
+          "description": "Play counting games and learn numbers in fun ways"
+        },
+        "animal_quiz": {
+          "title": "Animal Quiz",
+          "description": "Answer simple questions and choose the right animal"
+        }
       }
     }
+  },
+  "shared": {
+    "back": "Back"
   }
 }

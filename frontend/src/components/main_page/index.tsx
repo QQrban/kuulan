@@ -4,7 +4,7 @@ import Categories from '@/components/main_page/categories/Categories';
 import Benefits from '@/components/main_page/benefits/Benefits';
 import BottomCTA from '@/components/main_page/bottom_cta/BottomCTA';
 import Image from 'next/image';
-import kuulan from '@/../public/kuulan.jpg';
+import kuulan from '../../../public/logos/kuulan.jpg';
 import { useTranslations } from 'next-intl';
 
 export default function MainPage() {

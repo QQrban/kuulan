@@ -6,6 +6,8 @@ import { User } from './users/users.model';
 import { AcceptLanguageResolver, I18nModule } from 'nestjs-i18n';
 import { AuthModule } from './auth/auth.module';
 import { CategoriesModule } from './categories/categories.module';
+import { GamesModule } from './games/games.module';
+import { GameModesModule } from './game_modes/game_modes.module';
 import * as path from 'path';
 
 @Module({
@@ -36,6 +38,8 @@ import * as path from 'path';
     UsersModule,
     AuthModule,
     CategoriesModule,
+    GamesModule,
+    GameModesModule,
   ],
 })
 export class AppModule {}

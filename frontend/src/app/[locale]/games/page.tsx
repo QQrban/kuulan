@@ -1,10 +1,10 @@
 import AgeCard from '@/components/games/AgeCard';
-import twoYears from '@/../public/2years.jpg';
-import sevenYears from '@/../public/7years.jpg';
-import sixYears from '@/../public/6years.jpg';
-import threeYears from '@/../public/3years.jpg';
-import fourYears from '@/../public/4years.jpg';
-import fiveYears from '@/../public/5years.jpg';
+import twoYears from '../../../../public/child_age/2years.jpg';
+import sevenYears from '../../../../public/child_age/7years.jpg';
+import sixYears from '../../../../public/child_age/6years.jpg';
+import threeYears from '../../../../public/child_age/3years.jpg';
+import fourYears from '../../../../public/child_age/4years.jpg';
+import fiveYears from '../../../../public/child_age/5years.jpg';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 

@@ -22,7 +22,7 @@ export default function CategoryPill({
   return (
     <div
       className={[
-        'inline-flex items-center gap-3 rounded-full px-6 py-4',
+        'inline-flex items-center gap-3 rounded-full p-3 lg:px-6 lg:py-4',
         'border-2 shadow-[0_12px_28px_rgba(17,24,39,0.12)]',
         className,
       ].join(' ')}
@@ -33,7 +33,10 @@ export default function CategoryPill({
           {icon}
         </span>
       )}
-      <span className="text-2xl font-semibold leading-none" style={{ color }}>
+      <span
+        className="text-xl min-[854px]:text-2xl font-semibold leading-none"
+        style={{ color }}
+      >
         {label}
       </span>
     </div>

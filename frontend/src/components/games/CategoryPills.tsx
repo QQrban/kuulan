@@ -16,7 +16,8 @@ import CategoryPill from './CategoryPill';
 import { useTranslations } from 'next-intl';
 import { JSX } from 'react';
 import GameCard from '@/components/games/GameCard';
-import { mockGames } from '@/components/games/mock';
+import { Category, Game } from '@/types/games';
+import Link from 'next/link';
 
 const pillMeta: Record<
   string,
@@ -83,16 +84,25 @@ const pillMeta: Record<
     borderColor: 'var(--chart-5)',
   },
 };
-type Category = { id: string; name: string; age: number };
 
-export function CategoryPills({ categories }: { categories: Category[] }) {
+export function CategoryPills({
+  categories,
+  gamesByCategory,
+}: {
+  categories: Category[];
+  gamesByCategory: Record<string, Game[]>;
+}) {
   const t = useTranslations('games.list');
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center gap-4 mt-8">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-items-center gap-2 mt-8">
       {categories.map((c) => {
         const meta = pillMeta[c.name];
         if (!meta) return null;
+
+        const games = gamesByCategory[c.id] ?? [];
+        const topGames = games.slice(0, 4);
+        const hasMore = games.length > 4;
 
         return (
           <div
@@ -106,16 +116,25 @@ export function CategoryPills({ categories }: { categories: Category[] }) {
               borderColor={meta.borderColor}
             />
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full rounded-3xl p-4">
-              {mockGames.map((game) => (
+            <div className="p-4 flex flex-wrap justify-center gap-4 w-full">
+              {topGames.map((game) => (
                 <GameCard
                   bgColor={meta.bgColor}
                   key={game.id}
-                  title={game.title}
-                  icon={game.icon}
+                  title={t(game.titleKey)}
+                  icon={`/game_thumbs/${game.iconKey}.svg`}
                 />
               ))}
             </div>
+
+            {hasMore && (
+              <Link
+                href={`/games/category/${c.id}`}
+                className="text-sm font-medium underline text-(--text-muted) hover:text-(--brand-1)"
+              >
+                {t('see_all', { defaultValue: 'Смотреть все' })}
+              </Link>
+            )}
           </div>
         );
       })}
