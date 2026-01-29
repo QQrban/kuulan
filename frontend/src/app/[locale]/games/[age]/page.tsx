@@ -75,6 +75,7 @@ export default function Page() {
         <div className="mt-8 text-center text-(--text-muted)">Loading...</div>
       ) : (
         <CategoryPills
+          age={age}
           categories={categories}
           gamesByCategory={gamesByCategory}
         />

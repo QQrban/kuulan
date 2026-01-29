@@ -22,7 +22,7 @@ export default function Header() {
   return (
     <>
       <header className="sticky top-0 z-50 w-full bg-(--header-bg) shadow-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-3 py-4">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-3 py-2">
           <Logo />
 
           <div className="hidden md:block">

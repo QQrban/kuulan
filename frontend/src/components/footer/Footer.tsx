@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="mt-12 w-full bg-linear-to-br from-(--brand-1) via-(--brand-2) to-blue-400 opacity-90">
       <div className="mx-auto max-w-6xl px-3 pt-1 pb-3">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <div className="text-white/90 [&_a]:text-white/90 [&_a:hover]:text-white">
+          <div className="text-white/90 [&_a]:text-white/90 [&_a:hover]:text-white [&_a]:text-[13px] min-[380px]:[&_a]:text-base">
             <NavLinks />
           </div>
           <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">

@@ -88,12 +88,13 @@ const pillMeta: Record<
 export function CategoryPills({
   categories,
   gamesByCategory,
+  age,
 }: {
   categories: Category[];
   gamesByCategory: Record<string, Game[]>;
+  age: number;
 }) {
   const t = useTranslations('games.list');
-
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-items-center gap-2 mt-8">
       {categories.map((c) => {
@@ -118,12 +119,17 @@ export function CategoryPills({
 
             <div className="p-4 flex flex-wrap justify-center gap-4 w-full">
               {topGames.map((game) => (
-                <GameCard
-                  bgColor={meta.bgColor}
+                <Link
                   key={game.id}
-                  title={t(game.titleKey)}
-                  icon={`/game_thumbs/${game.iconKey}.svg`}
-                />
+                  href={`/games/${age}/${game.name}/guess_by_shadow`}
+                  className="block"
+                >
+                  <GameCard
+                    bgColor={meta.bgColor}
+                    title={t(game.titleKey)}
+                    icon={`/game_thumbs/${game.iconKey}.svg`}
+                  />
+                </Link>
               ))}
             </div>
 

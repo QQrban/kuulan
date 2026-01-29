@@ -31,7 +31,7 @@ export function ProfileDropDown() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <span className="grid place-items-center rounded-full border-2 border-(--brand-2)/60 bg-[linear-gradient(135deg,var(--brand-1),var(--brand-2))] p-1 cursor-pointer">
-          <Image src={noAvatar} width={50} height={50} alt="avatar" />
+          <Image src={noAvatar} width={40} height={40} alt="avatar" />
         </span>
       </DropdownMenuTrigger>
 
